@@ -132,10 +132,11 @@ app.get("/echo", (req, res) => {
 // Route params: /profile/First/Last
 app.get("/profile/:first/:last", (req, res) => {
   const { first, last } = req.params;
+  const fullName = `${first} ${last}`;
 
   return res.json({
     ok: true,
-    fullName: `${first} ${last}`,
+    fullName,
   });
 });
 
