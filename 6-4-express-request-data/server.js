@@ -146,9 +146,10 @@ app.param("userId", (req, res, next, userId) => {
   const userIdNum = Number(userId);
 
   if (!Number.isFinite(userIdNum) || userIdNum <= 0) {
-    return res
-      .status(400)
-      .json({ ok: false, error: "userId must be positive number" });
+    return res.status(400).json({
+      ok: false,
+      error: "userId must be positive number",
+    });
   }
 
   req.userIdNum = userIdNum;
